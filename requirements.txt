@@ -1,0 +1,9 @@
+# requirements.txt - Dependencias SIMPLIFICADAS para Python 3.13
+
+# Framework principal (versión compatible)
+Flask==3.0.0
+
+# Servidor para producción 
+gunicorn==21.2.0
+
+# Solo lo esencial - sin librerías problemáticas
