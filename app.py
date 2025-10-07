@@ -17,7 +17,6 @@ ADVISOR_CONFIG = {
     "submessage": "OBTEN UNA ASESORÍA COMPLETAMENTE GRATIS",
     
     "hero_video": "https://res.cloudinary.com/dweqlnl1w/video/upload/v1759790299/4733687-uhd_2160_3840_25fps_nufezs.mp4",
-    
     "hero_fallback_image": "https://res.cloudinary.com/dweqlnl1w/image/upload/v1759790052/pexels-oandremoura-6105553_a8f5yu.jpg",
     
     "instagram_handle": "@yolandaquinteroseguros",
@@ -26,8 +25,14 @@ ADVISOR_CONFIG = {
     "email": "yolandaquinteroasesor@gmail.com",
     "location": "Bucaramanga, Santander",
     "about_text": "Soy Yolanda Quintero, asesora de seguros con más de 20 años de experiencia en el sector asegurador, trabajando con las principales compañías del país como SURA, AXA Colpatria, Liberty Seguros, Mapfre, Allianz, entre otras. Mi objetivo es brindar a cada cliente la mejor cobertura al mejor precio, comparando entre múltiples aseguradoras para encontrar la opción perfecta para sus necesidades. Ofrezco asesoría personalizada en seguros de vida, salud, vehículos, hogar, empresariales y ARL. Si buscas tranquilidad y protección real para ti y tu familia, agenda tu consultoría gratuita conmigo.",
-    "google_maps_embed": "Bucaramanga Santander",
-    "google_ads_id": "", # Reemplazar con ID real si se tiene
+    
+    # Google Maps Business actualizado
+    "google_maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.042674940027!2d-73.11921892551598!3d7.121052915932064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f86b74b81eb%3A0x45fa4d71293dfeef!2sYolanda%20Quintero%20-%20Asesora%20de%20Seguros%20en%20Bucaramanga!5e0!3m2!1ses-419!2sco!4v1759867142646!5m2!1ses-419!2sco",
+    
+    # Enlace directo a reviews de Google Business
+    "google_reviews_url": "https://www.google.com/maps/place/Yolanda+Quintero+-+Asesora+de+Seguros+en+Bucaramanga/@7.1210529,-73.1192189,17z/data=!4m8!3m7!1s0x8e683f86b74b81eb:0x45fa4d71293dfeef!8m2!3d7.1210529!4d-73.116444!9m1!1b1!16s%2Fg%2F11y3h0bc1q?entry=ttu",
+    
+    "google_ads_id": "",
 }
 
 insurance_services = [
@@ -281,8 +286,7 @@ HTML_TEMPLATE = '''
         position: relative;
         padding-top: 70px;
         overflow: hidden;
-        background:  
-                    url('{{ config.hero_fallback_image }}') center/cover no-repeat;
+        background: url('{{ config.hero_fallback_image }}') center/cover no-repeat;
     }
     
     .hero-video {
@@ -308,7 +312,6 @@ HTML_TEMPLATE = '''
         left: 0;
         right: 0;
         bottom: 0;
-        
         z-index: 2;
     }
     
@@ -347,17 +350,10 @@ HTML_TEMPLATE = '''
     .hero-submessage {
         font-size: 1.3rem;
         font-weight: 700;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         color: var(--text-dark);
         text-transform: uppercase;
         letter-spacing: 1px;
-    }
-    
-    .hero-final {
-        font-size: 1.2rem;
-        font-weight: 600;
-        margin-bottom: 2rem;
-        color: #ffffff;
     }
     
     .cta-button {
@@ -574,33 +570,15 @@ HTML_TEMPLATE = '''
     
     .companies-subtitle {
         color: var(--text-medium);
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
         font-size: 1.1rem;
     }
     
-    .companies-logos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 2rem;
-        opacity: 0.7;
-    }
-    
-    .company-logo {
-        font-size: 1.5rem;
+    .companies-note {
+        color: var(--text-dark);
         font-weight: 700;
-        color: var(--text-medium);
-        padding: 1rem 2rem;
-        border: 2px solid var(--border-light);
-        border-radius: 8px;
-        transition: all 0.3s ease;
-    }
-    
-    .company-logo:hover {
-        border-color: var(--primary-blue);
-        color: var(--primary-blue);
-        opacity: 1;
+        font-size: 1.2rem;
+        margin-top: 1rem;
     }
     
     .map-section {
@@ -790,10 +768,6 @@ HTML_TEMPLATE = '''
             grid-template-columns: 1fr;
             text-align: center;
         }
-        
-        .companies-logos {
-            flex-direction: column;
-        }
     }
     
     @media (max-width: 480px) {
@@ -822,6 +796,7 @@ HTML_TEMPLATE = '''
     }
     </style>
     
+    {% if config.google_ads_id %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ config.google_ads_id }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -829,6 +804,7 @@ HTML_TEMPLATE = '''
         gtag('js', new Date());
         gtag('config', '{{ config.google_ads_id }}');
     </script>
+    {% endif %}
     
     <script>
         function gtagSendEvent(url) {
@@ -837,10 +813,14 @@ HTML_TEMPLATE = '''
                     window.location = url;
                 }
             };
-            gtag('event', 'whatsapp_contact', {
-                'event_callback': callback,
-                'event_timeout': 2000,
-            });
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'whatsapp_contact', {
+                    'event_callback': callback,
+                    'event_timeout': 2000,
+                });
+            } else {
+                callback();
+            }
             return false;
         }
     </script>
@@ -862,7 +842,7 @@ HTML_TEMPLATE = '''
     <nav class="mobile-menu" id="mobileMenu">
         <a href="#inicio" class="mobile-menu-item">Inicio</a>
         <a href="#servicios" class="mobile-menu-item">Servicios</a>
-        <a href="#sobre-mi" class="mobile-menu-item">Mi Experiencia</a>
+        <a href="#mi-experiencia" class="mobile-menu-item">Mi Experiencia</a>
         <a href="#contacto" class="mobile-menu-item">Contacto</a>
         <a href="{{ config.instagram_url }}" target="_blank" class="mobile-menu-item mobile-menu-instagram">
             <i class="fab fa-instagram"></i>
@@ -880,7 +860,6 @@ HTML_TEMPLATE = '''
             <h1 class="hero-title">{{ config.advisor_name }}</h1>
             <p class="hero-message">{{ config.main_message }}</p>
             <p class="hero-submessage">{{ config.submessage }}</p>
-            <p class="hero-final">{{ config.final_message }}</p>
             <a href="{{ whatsapp_link }}" class="cta-button" target="_blank" onclick="return gtagSendEvent('{{ whatsapp_link }}')">
                 <i class="fas fa-calculator"></i> COTIZAR AHORA
             </a>
@@ -890,7 +869,7 @@ HTML_TEMPLATE = '''
     <section class="services-section" id="servicios">
         <div class="section-container">
             <h2 class="section-title">Nuestros Servicios</h2>
-            <p class="section-subtitle"></p>
+            <p class="section-subtitle">Asesoría personalizada en todos los seguros que necesitas</p>
             <div class="services-grid">
                 {% for service in services %}
                 <div class="service-card fade-in">
@@ -910,9 +889,9 @@ HTML_TEMPLATE = '''
 
     <section class="companies-section">
         <div class="section-container">
-            <h2 class="companies-title">Trabajamos con las mejores compañías para ofrecerte la mejor protección</h2>
-            <p class="companies-subtitle">Comparamos precios entre múltiples compañías para conseguirte la mejor oferta posible en el mercado actual.</p>
-            <p class="companies-note">NO ENCONTRARAS UN MEJOR PRECIO EN NINGUNA PARTE.</p>
+            <h2 class="companies-title">Trabajamos con las mejores compañías</h2>
+            <p class="companies-subtitle">Comparamos precios entre múltiples aseguradoras para conseguirte la mejor oferta del mercado.</p>
+            <p class="companies-note">NO ENCONTRARÁS UN MEJOR PRECIO EN NINGUNA PARTE</p>
         </div>
     </section>
 
@@ -939,7 +918,7 @@ HTML_TEMPLATE = '''
     <section class="map-section" id="contacto">
         <div class="map-container">
             <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31715.648982!2d-73.13521!3d7.12539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f408f6f6f67%3A0x6e5a5d4b8b8b8b8b!2sBucaramanga%2C%20Santander!5e0!3m2!1ses!2sco!4v1644542567890!5m2!1ses!2sco"
+                src="{{ config.google_maps_embed }}"
                 width="100%" 
                 height="100%" 
                 style="border:0;" 
@@ -962,8 +941,8 @@ HTML_TEMPLATE = '''
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
             </div>
-            <a href="https://g.page/reviews" target="_blank" class="testimonials-button">
-                VER TODAS LAS OPINIONES
+            <a href="{{ config.google_reviews_url }}" target="_blank" class="testimonials-button">
+                <i class="fab fa-google"></i> VER OPINIONES EN GOOGLE
             </a>
         </div>
     </section>
@@ -972,30 +951,41 @@ HTML_TEMPLATE = '''
         <div class="footer-content">
             <div class="footer-section">
                 <h3>{{ config.business_name }}</h3>
-                <p>Tu asesora de seguros de confianza. </p>
+                <p>Tu asesora de seguros de confianza en Bucaramanga</p>
                 <div class="footer-social">
-                    <a href="{{ config.instagram_url }}" target="_blank">
+                    <a href="{{ config.instagram_url }}" target="_blank" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="{{ whatsapp_link }}" target="_blank">
+                    <a href="{{ whatsapp_link }}" target="_blank" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="mailto:{{ config.email }}">
+                    <a href="mailto:{{ config.email }}" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
+            </div>
             
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <div class="footer-links">
-                    <a href="tel:(+57) 321 648-4963">(+57) 321-648-4963</a>
+                    <a href="tel:+573216484963">+57 321 648-4963</a>
                     <a href="mailto:{{ config.email }}">{{ config.email }}</a>
                     <a href="#contacto">{{ config.location }}</a>
                 </div>
             </div>
+            
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <div class="footer-links">
+                    <a href="#servicios">Servicios</a>
+                    <a href="#mi-experiencia">Sobre Mí</a>
+                    <a href="#contacto">Contacto</a>
+                    <a href="{{ config.google_reviews_url }}" target="_blank">Opiniones</a>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025. Todos los derechos reservados. </p>
+            <p>&copy; 2025 {{ config.advisor_name }}. Todos los derechos reservados.</p>
         </div>
     </footer>
 
