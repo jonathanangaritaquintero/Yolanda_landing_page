@@ -24,7 +24,7 @@ ADVISOR_CONFIG = {
     "whatsapp_number": "+573216484963",
     "email": "yolandaquinteroasesor@gmail.com",
     "location": "Bucaramanga, Santander",
-    "about_text": "Soy Yolanda Quintero, asesora de seguros con más de 20 años de experiencia en el sector asegurador, trabajando con las principales compañías del país como SURA, AXA Colpatria, Liberty Seguros, Mapfre, Allianz, entre otras. Mi objetivo es brindar a cada cliente la mejor cobertura al mejor precio, comparando entre múltiples aseguradoras para encontrar la opción perfecta para sus necesidades. Ofrezco asesoría personalizada en seguros de vida, salud, vehículos, hogar, empresariales y ARL. Si buscas tranquilidad y protección real para ti y tu familia, agenda tu consultoría gratuita conmigo.",
+    "about_text": "Soy Yolanda Quintero, asesora de seguros con más de 20 años de experiencia en el sector asegurador, trabajando con las principales compañías del país como SURA, AXA Colpatria, Solidaria, Mapfre, Allianz, entre otras. Mi objetivo es brindar a cada cliente la mejor cobertura al mejor precio, comparando entre múltiples aseguradoras para encontrar la opción perfecta para sus necesidades. Ofrezco asesoría personalizada en seguros de vida, salud, vehículos, hogar, empresariales y ARL. Si buscas tranquilidad y protección real para ti y tu familia, agenda tu consultoría gratuita conmigo.",
     
     # Google Maps Business actualizado
     "google_maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.042674940027!2d-73.11921892551598!3d7.121052915932064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f86b74b81eb%3A0x45fa4d71293dfeef!2sYolanda%20Quintero%20-%20Asesora%20de%20Seguros%20en%20Bucaramanga!5e0!3m2!1ses-419!2sco!4v1759867142646!5m2!1ses-419!2sco",
@@ -89,7 +89,7 @@ HTML_TEMPLATE = '''
     <title>{{ config.advisor_name }} - {{ config.title }}</title>
     
     <meta name="description" content="Asesora de seguros en {{ config.location }}. +20 años de experiencia. Cotización gratuita.">
-    <meta name="keywords" content="seguros bucaramanga, asesora seguros, SURA, AXA Colpatria, Liberty, vida, vehicular, hogar">
+    <meta name="keywords" content="seguros bucaramanga, asesora seguros, SURA, AXA Colpatria, Solidaria, vida, vehicular, hogar">
     
     <meta property="og:title" content="Yolanda Quintero - Asesora de Seguros Bucaramanga">
     <meta property="og:description" content="Asesora de seguros con +20 años de experiencia. Cotización GRATIS.">
@@ -828,7 +828,7 @@ HTML_TEMPLATE = '''
 <body>
     <header class="header">
         <nav class="nav-container">
-            <a href="#" class="logo">{{ config.business_name }}<span class="highlight">.</span></a>
+            <a href="#" class="logo">{{ config.business_name }}<span class="highlight"></span></a>
             <div class="hamburger-menu" id="hamburgerMenu">
                 <div class="hamburger-line"></div>
                 <div class="hamburger-line"></div>
@@ -978,7 +978,7 @@ HTML_TEMPLATE = '''
                 <h3>Enlaces Rápidos</h3>
                 <div class="footer-links">
                     <a href="#servicios">Servicios</a>
-                    <a href="#mi-experiencia">Sobre Mí</a>
+                    <a href="#mi-experiencia">Mi Experiencia</a>
                     <a href="#contacto">Contacto</a>
                     <a href="{{ config.google_reviews_url }}" target="_blank">Opiniones</a>
                 </div>
