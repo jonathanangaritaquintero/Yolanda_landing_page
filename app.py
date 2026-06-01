@@ -24,7 +24,7 @@ ADVISOR_CONFIG = {
     "whatsapp_number": "+573216484963",
     "email": "yolandaquinteroasesor@gmail.com",
     "location": "Bucaramanga, Santander",
-    "about_text": "Soy Yolanda Quintero, asesora de seguros con más de 20 años de experiencia en el sector asegurador, trabajando con las principales compañías del país como SURA, AXA Colpatria, Solidaria, Mapfre, Allianz, entre otras. Mi objetivo es brindar a cada cliente la mejor cobertura al mejor precio, comparando entre múltiples aseguradoras para encontrar la opción perfecta para sus necesidades. Ofrezco asesoría personalizada en seguros de vida, salud, vehículos, hogar, empresariales y ARL. Si buscas tranquilidad y protección real para ti y tu familia, agenda tu consultoría gratuita conmigo.",
+    "about_text": "Soy Yolanda Quintero, asesora de seguros con más de 20 años de experiencia en el sector asegurador, trabajando con las principales compañías del país como SURA, AXA Colpatria, Solidaria, Mapfre, Allianz, entre otras. Mi objetivo es brindar a cada cliente la mejor cobertura al mejor precio, comparando entre múltiples aseguradoras para encontrar la opción perfecta para tus necesidades. Si buscas tranquilidad y protección real para ti y tu familia, agenda tu consultoría gratuita conmigo.",
     
     # Google Maps Business actualizado
     "google_maps_embed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.042674940027!2d-73.11921892551598!3d7.121052915932064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f86b74b81eb%3A0x45fa4d71293dfeef!2sYolanda%20Quintero%20-%20Asesora%20de%20Seguros%20en%20Bucaramanga!5e0!3m2!1ses-419!2sco!4v1759867142646!5m2!1ses-419!2sco",
@@ -557,7 +557,7 @@ HTML_TEMPLATE = '''
     
     .companies-section {
         padding: 4rem 2rem;
-        background: var(--bg-warm-white);
+        background: var(--cream);
         text-align: center;
     }
     
@@ -889,9 +889,9 @@ HTML_TEMPLATE = '''
 
     <section class="companies-section">
         <div class="section-container">
-            <h2 class="companies-title">Trabajamos con las mejores compañías</h2>
+            <h2 class="companies-title">Trabajamos con las mejores compañías actualmente</h2>
             <p class="companies-subtitle">Comparamos precios entre múltiples aseguradoras para conseguirte la mejor oferta del mercado.</p>
-            <p class="companies-note">NO ENCONTRARÁS UN MEJOR PRECIO EN NINGUNA PARTE</p>
+            <p class="companies-note">NO ENCONTRARÁS UNO MEJOR EN NINGUNA PARTE</p>
         </div>
     </section>
 
@@ -985,7 +985,7 @@ HTML_TEMPLATE = '''
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 {{ config.advisor_name }}. Todos los derechos reservados.</p>
+            <p>&copy; 2026 {{ config.advisor_name }}. Todos los derechos reservados.</p>
         </div>
     </footer>
 
