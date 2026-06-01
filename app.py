@@ -13,7 +13,7 @@ ADVISOR_CONFIG = {
     "business_name": "+20 años de experiencia",
     "advisor_name": "Yolanda Quintero",
     "title": "ASESORA DE SEGUROS",
-    "main_message": "¿Necesitas un seguro y al mejor precio?",
+    "main_message": "¿Seguridad y al mejor precio?",
     "submessage": "OBTEN UNA ASESORÍA COMPLETAMENTE GRATIS",
     
     "hero_video": "https://res.cloudinary.com/dweqlnl1w/video/upload/v1759790299/4733687-uhd_2160_3840_25fps_nufezs.mp4",
@@ -38,7 +38,7 @@ ADVISOR_CONFIG = {
 insurance_services = [
     {
         "name": "SEGUROS DE VIDA",
-        "image": "https://res.cloudinary.com/dweqlnl1w/image/upload/v1756162454/cld-sample.jpg",
+        "image": "https://res.cloudinary.com/dweqlnl1w/image/upload/v1756162444/samples/people/boy-snow-hoodie.jpg",
         "description": "Individual y familiar, colectivos vida grupo - Protección garantizada"
     },
     {
@@ -48,7 +48,7 @@ insurance_services = [
     },
     {
         "name": "HOGAR",
-        "image": "https://res.cloudinary.com/dweqlnl1w/image/upload/v1756162444/samples/people/boy-snow-hoodie.jpg",
+        "image": "https://res.cloudinary.com/dweqlnl1w/image/upload/v1780338767/main-sample.png",
         "description": "Multiriesgo hogar y hogar deudor - Protección completa"
     },
     {
@@ -63,7 +63,7 @@ insurance_services = [
     },
     {
         "name": "CREDITOS PARA VEHICULOS",
-        "image": "https://res.cloudinary.com/dweqlnl1w/image/upload/v1756162444/samples/people/bicycle.jpg",
+        "image": "https://res.cloudinary.com/dweqlnl1w/image/upload/v1780339549/senger_ctmc_Schwarzer_Audi_A4_von_vorne_bei_Nacht_auf_schwarzem_6e724466-3a53-47f8-bcc9-cb22b468d6d8_mbitbf.png",
         "description": "Usados y nuevos, compra de cartera y leasing - Aprobación rápida"
     }
 ]
@@ -102,7 +102,7 @@ HTML_TEMPLATE = '''
     
     <style>
     :root {
-        --primary-blue: #6B83D6;
+        --primary-blue: #6B99D6;
         --primary-teal: #52D4D4;
         --primary-green: #47C4BC;
         --hover-blue: #5A72C4;
@@ -140,7 +140,7 @@ HTML_TEMPLATE = '''
     }
     
     .header {
-        background: var(--bg-warm-white);
+        background: var(--cream);
         padding: 1rem 0;
         box-shadow: var(--shadow-soft);
         position: fixed;
